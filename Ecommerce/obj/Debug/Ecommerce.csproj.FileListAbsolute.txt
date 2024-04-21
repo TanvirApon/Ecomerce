@@ -81,3 +81,7 @@ F:\Asp.net\Ecommerce\Ecommerce\obj\Debug\Ecommerce.csproj.CoreCompileInputs.cach
 F:\Asp.net\Ecommerce\Ecommerce\obj\Debug\Ecommerce.csproj.CopyComplete
 F:\Asp.net\Ecommerce\Ecommerce\obj\Debug\Ecommerce.dll
 F:\Asp.net\Ecommerce\Ecommerce\obj\Debug\Ecommerce.pdb
+F:\Asp.net\Ecommerce\Ecommerce\bin\PagedList.dll
+F:\Asp.net\Ecommerce\Ecommerce\bin\PagedList.Mvc.dll
+F:\Asp.net\Ecommerce\Ecommerce\bin\PagedList.xml
+F:\Asp.net\Ecommerce\Ecommerce\bin\PagedList.Mvc.xml

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.IO;
-
+using PagedList;
 
 namespace Ecommerce.Controllers
 {
@@ -67,7 +67,7 @@ namespace Ecommerce.Controllers
                 db.tbl_category.Add(cat);
                 db.SaveChanges();
 
-                return RedirectToAction("Create");
+                return RedirectToAction("ViewCategory");
 
             }
 
@@ -75,14 +75,26 @@ namespace Ecommerce.Controllers
         }
 
         [HttpGet]
-        public ActionResult ViewCategory()
+        public ActionResult ViewCategory(int ?page)
         {
-            return View();
+
+            if (Session["ad_id"] == null)
+            {
+                return RedirectToAction("login");
+            }
+
+            else
+            {
+
+                int pagesize = 9, pageindex = 1;
+                pageindex = page.HasValue ? Convert.ToInt32(page) : 1;
+                var list = db.tbl_category.Where(x => x.cat_status == 1).OrderByDescending(x=>x.cat_id).ToList();
+                IPagedList<tbl_category> stu = list.ToPagedList(pageindex, pagesize);
+
+                return View(stu);
+
+            }
         }
-
-
-
-
 
 
 
@@ -107,7 +119,7 @@ namespace Ecommerce.Controllers
                         path = Path.Combine(Server.MapPath("~/Content/upload"), random + Path.GetFileName(file.FileName));
                         file.SaveAs(path);
 
-                        path = "~/Content/upload" + random + Path.GetFileName(file.FileName);
+                        path = "~/Content/upload/" + random + Path.GetFileName(file.FileName);
 
                     }
 
@@ -135,13 +147,7 @@ namespace Ecommerce.Controllers
 
             }
 
-
-
-
             return path;
-
-
-
 
         }
 
