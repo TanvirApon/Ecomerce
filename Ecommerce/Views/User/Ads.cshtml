@@ -1,10 +1,24 @@
-﻿@using PagedList.Mvc
-@model  PagedList.IPagedList<Ecommerce.Models.tbl_category>
+﻿
+@using PagedList.Mvc
+@model PagedList.IPagedList<Ecommerce.Models.tbl_product>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Ads";
     Layout = "~/Views/Shared/_Layout1.cshtml";
 }
+
+
+<style>
+    .cimg {
+        -webkit-transform 5s;
+        transition: transform 5s;
+    }
+
+        .cimg:hover {
+            -webkit-transform: rotatez(360deg);
+        }
+</style>
+
 
 <!DOCTYPE html>
 
@@ -17,7 +31,7 @@
     <link href="~/Content/bootstrap.css" rel="stylesheet" />
 </head>
 <body>
-    <div class="container" style="height:1150px; ">
+    <div style="height:1150px; ">
         <div class="row">
             <div class="col-lg-12" style="height:100px; border:1px solid solid; ">
 
@@ -32,25 +46,44 @@
 
 
         <div class="row" style="margin-bottom:40px">
+
             <div class="col-lg-2 col-md-2">
                 <img src="~/Content/img/150_sleep1_600.gif" class="img img-responsive" style="width:100%; height:100%" />
             </div>
 
             <div class="col-lg-8 col-md-8">
+
+                @using (@Html.BeginForm("Ads", "User"))
+                {
+                    <div class="navbar-form ">
+                        <div class="form-group">
+
+                            <input type="text" class="form-control" placeholder="Search" name="search" id="search">
+                        </div>
+                        <button type="submit" class="btn btn-success">Search</button>
+                    </div>
+                }
+
+
+
                 <div class="row">
+                    @{int x = 0;}
                     @if (Model != null)
                     {
                         foreach (var item in Model)
                         {
+                            x++;
                             <div class="col-lg-4 col-md-4" style="height:200px;margin-top:100px">
 
-                                <img class="img img-responsive cimg" src="@Url.Content(item.cat_image)" style=" height:100%;width:100% ;border-radius:50px 50px 50px 50px" />
-                                <h4 style="color:#808080; font-family:'Arial Rounded MT';text-align:center"> @Html.ActionLink(@item.cat_name, "Ads", new { id = @item.cat_id })</h4>
+                                <img class="img img-responsive cimg" src="@Url.Content(item.pro_image)" style=" height:100%;width:100% ;border-radius:50px 50px 50px 50px" />
+                                <h4 style="color:#808080; font-family:'Arial Rounded MT';text-align:center"> @Html.ActionLink(@item.pro_name, "ViewAd", new { id = @item.pro_uid })</h4>
 
                             </div>
 
                         }
                     }
+
+                    <h4>@x Results found</h4>
                 </div>
             </div>
 
@@ -73,16 +106,8 @@
         <p></p>
         <div class="pagination" style="margin-left: 400px">
             Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)
-            of @Model.PageCount   @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+            of @Model.PageCount   @Html.PagedListPager(Model, page => Url.Action("Ads", new { page }))
         </div>
     </div>
 </body>
 </html>
-
-
-
-
-
-
-
-

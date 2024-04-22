@@ -96,6 +96,71 @@ namespace Ecommerce.Controllers
         }
 
 
+        [HttpGet]
+        public ActionResult CreateAd()
+        {
+            List<tbl_category> li = db.tbl_category.ToList();
+            ViewBag.categoryList = new SelectList(li, "cat_id", "cat_name");
+
+
+
+
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult CreateAd(tbl_product pvm, HttpPostedFileBase imgfile)
+        {
+
+            string path = uploadingimgfile(imgfile);
+
+            if (path.Equals("-1"))
+            {
+
+                ViewBag.error = "Image could not be uploaded";
+            }
+
+            else
+            {
+                tbl_product pr = new tbl_product();
+                pr.pro_name = pvm.pro_name;
+                pr.pro_price = pvm.pro_price;
+                pr.pro_image = path;
+                pr.pro_fk_cat = pvm.pro_fk_cat;
+                pr.pro_fk_user = Convert.ToInt32(Session["u_id"].ToString());
+
+                db.tbl_product.Add(pr);
+                db.SaveChanges();
+
+                Response.Redirect("Index");
+
+                
+
+            }
+
+
+            return View();
+
+        }
+
+
+        public ActionResult Ads(int ? id, int ? page )
+        {
+
+            int pagesize = 9, pageindex = 1;
+            pageindex = page.HasValue ? Convert.ToInt32(page) : 1;
+            var list = db.tbl_product.Where(x => x.pro_fk_cat == id).OrderByDescending(x =>x.pro_uid).ToList();
+            IPagedList<tbl_product> stu = list.ToPagedList(pageindex, pagesize);
+
+            return View(stu);
+
+
+         
+        }
+
+
+
+
         //image uploader code
         public string uploadingimgfile(HttpPostedFileBase file)
         {
