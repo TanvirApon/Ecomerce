@@ -20,9 +20,9 @@
   </EntityType>
   <EntityType Name="tbl_product">
     <Key>
-      <PropertyRef Name="pro_uid" />
+      <PropertyRef Name="pro_id" />
     </Key>
-    <Property Name="pro_uid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="pro_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="pro_name" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="pro_image" Type="varchar(max)" Nullable="false" />
     <Property Name="pro_des" Type="varchar(max)" Nullable="false" />

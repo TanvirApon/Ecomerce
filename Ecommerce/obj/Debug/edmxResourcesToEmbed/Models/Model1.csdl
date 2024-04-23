@@ -23,9 +23,9 @@
   </EntityType>
   <EntityType Name="tbl_product">
     <Key>
-      <PropertyRef Name="pro_uid" />
+      <PropertyRef Name="pro_id" />
     </Key>
-    <Property Name="pro_uid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="pro_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="pro_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="pro_image" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="pro_des" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />

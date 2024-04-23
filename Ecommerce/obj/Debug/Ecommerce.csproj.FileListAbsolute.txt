@@ -76,7 +76,6 @@ F:\Asp.net\Ecommerce\Ecommerce\bin\System.Web.WebPages.Razor.xml
 F:\Asp.net\Ecommerce\Ecommerce\bin\Newtonsoft.Json.xml
 F:\Asp.net\Ecommerce\Ecommerce\bin\Antlr3.Runtime.pdb
 F:\Asp.net\Ecommerce\Ecommerce\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-F:\Asp.net\Ecommerce\Ecommerce\obj\Debug\Ecommerce.csproj.AssemblyReference.cache
 F:\Asp.net\Ecommerce\Ecommerce\obj\Debug\Ecommerce.csproj.CoreCompileInputs.cache
 F:\Asp.net\Ecommerce\Ecommerce\obj\Debug\Ecommerce.csproj.CopyComplete
 F:\Asp.net\Ecommerce\Ecommerce\obj\Debug\Ecommerce.dll
@@ -85,3 +84,4 @@ F:\Asp.net\Ecommerce\Ecommerce\bin\PagedList.dll
 F:\Asp.net\Ecommerce\Ecommerce\bin\PagedList.Mvc.dll
 F:\Asp.net\Ecommerce\Ecommerce\bin\PagedList.xml
 F:\Asp.net\Ecommerce\Ecommerce\bin\PagedList.Mvc.xml
+F:\Asp.net\Ecommerce\Ecommerce\obj\Debug\Ecommerce.csproj.AssemblyReference.cache

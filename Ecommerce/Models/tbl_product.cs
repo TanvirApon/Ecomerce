@@ -14,7 +14,7 @@ namespace Ecommerce.Models
     
     public partial class tbl_product
     {
-        public int pro_uid { get; set; }
+        public int pro_id { get; set; }
         public string pro_name { get; set; }
         public string pro_image { get; set; }
         public string pro_des { get; set; }

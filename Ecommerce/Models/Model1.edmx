@@ -25,9 +25,9 @@
         </EntityType>
         <EntityType Name="tbl_product">
           <Key>
-            <PropertyRef Name="pro_uid" />
+            <PropertyRef Name="pro_id" />
           </Key>
-          <Property Name="pro_uid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="pro_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="pro_name" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="pro_image" Type="varchar(max)" Nullable="false" />
           <Property Name="pro_des" Type="varchar(max)" Nullable="false" />
@@ -128,9 +128,9 @@
         </EntityType>
         <EntityType Name="tbl_product">
           <Key>
-            <PropertyRef Name="pro_uid" />
+            <PropertyRef Name="pro_id" />
           </Key>
-          <Property Name="pro_uid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="pro_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="pro_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="pro_image" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="pro_des" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
@@ -235,7 +235,7 @@
           <EntitySetMapping Name="tbl_product">
             <EntityTypeMapping TypeName="dbmarketingModel.tbl_product">
               <MappingFragment StoreEntitySet="tbl_product">
-                <ScalarProperty Name="pro_uid" ColumnName="pro_uid" />
+                <ScalarProperty Name="pro_id" ColumnName="pro_id" />
                 <ScalarProperty Name="pro_name" ColumnName="pro_name" />
                 <ScalarProperty Name="pro_image" ColumnName="pro_image" />
                 <ScalarProperty Name="pro_des" ColumnName="pro_des" />

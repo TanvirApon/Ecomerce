@@ -18,7 +18,7 @@
     <nav class="navbar navbar-inverse" style="">
         <div class="container-fluid">
             <div class="navbar-header">
-                <a class="navbar-brand" href="#">SALMAN MASOOD</a>
+                <a class="navbar-brand" href="#">Ecommerce</a>
             </div>
             <ul class="nav navbar-nav">
                 <li>@Html.ActionLink("Category", "Index", "User", null, new { @class = "ht" })</li>
@@ -42,7 +42,7 @@
                 <li>
                     @if (Session["u_id"] == null)
                     {
-                        @Html.ActionLink("Sign Up", "Signup", "User", null, new { @class = "ht" })
+                        @Html.ActionLink("Sign Up", "Singup", "User", null, new { @class = "ht" })
                     }
                     else
                     {
